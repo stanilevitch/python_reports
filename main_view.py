@@ -1,17 +1,20 @@
 import tkinter
-from tkinter import messagebox as tkMessageBox
 
-top = tkinter.Tk()
+# top = tkinter.Tk()
+#
+# f = top.Frame(master, height=32, width=32)
+# f.pack_propagate(0) # don't shrink
+# f.pack()
+#
+# b = Button(f, text="Sure!")
+# b.pack(fill=BOTH, expand=1)
 
 
-def close_window():
-    tkMessageBox.showinfo("tytuł", "tekst wewnątrz drugiego okna")
+master = tkinter.Tk()
 
+def callback():
+    print(f"click!")
 
-B1 = tkinter.Button(top, text="B1", command=close_window)
-B1.pack()
-
-B2 = tkinter.Button(top, text="B2")
-B2.pack()
-
-top.mainloop()
+b = tkinter.Button(master, text="OK", command=callback)
+b.pack()
+tkinter.mainloop()
